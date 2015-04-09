@@ -20,6 +20,7 @@ type results struct {
 	Events        []interface{}
 	Stashes       []interface{}
 	Subscriptions []string
+	Tags          []string
 	mu            sync.Mutex
 }
 
@@ -121,6 +122,7 @@ func Build(dcSlice *[]sensu.Sensu) {
 	BuildEvents()
 	BuildClients()
 	BuildSubscriptions()
+	BuildTags()
 
 	mutex.Lock()
 	defer mutex.Unlock()

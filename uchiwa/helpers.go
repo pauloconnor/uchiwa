@@ -146,6 +146,15 @@ func isAcknowledged(c string, k string, dc string) bool {
 	return a
 }
 
+func isStringInSlice(slice []string, a string) bool {
+	for _, b := range slice {
+		if b == a {
+			return true
+		}
+	}
+	return false
+}
+
 func setDc(v interface{}, dc string) {
 	m, ok := v.(map[string]interface{})
 	if !ok {
